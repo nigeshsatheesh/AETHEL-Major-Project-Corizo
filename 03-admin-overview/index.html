@@ -1,0 +1,306 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AETHEL Admin - Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1c",
+                        "primary-container": "#e6e6fa",
+                        "on-tertiary-fixed-variant": "#50462f",
+                        "on-secondary-container": "#636262",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#d5c5a7",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-tint": "#5c5d6e",
+                        "background": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "primary": "#5c5d6e",
+                        "on-primary-fixed-variant": "#444655",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#656677",
+                        "tertiary-container": "#f7e6c7",
+                        "lavender-deep": "#967BB6",
+                        "tertiary-fixed": "#f1e1c2",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-container": "#73664e",
+                        "tertiary": "#695d45",
+                        "text-main": "#111111",
+                        "primary-fixed-dim": "#c5c5d8",
+                        "secondary-container": "#e2dfde",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-fixed": "#231a08",
+                        "surface-variant": "#e2e2e2",
+                        "outline-variant": "#c7c5cc",
+                        "on-surface-variant": "#46464c",
+                        "surface-dim": "#dadada",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface": "#1a1c1c",
+                        "surface-white": "#FFFFFF",
+                        "inverse-primary": "#c5c5d8",
+                        "primary-fixed": "#e1e1f5",
+                        "on-error-container": "#93000a",
+                        "secondary": "#5f5e5e",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2f3131",
+                        "lavender-mist": "#F3F3FF",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "text-muted": "#666666",
+                        "outline": "#77767d",
+                        "on-primary-fixed": "#191b29",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "unit": "4px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #f9f9f9; }
+        .nav-item-active {
+            background-color: #F3F3FF;
+            color: #967BB6;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            transform: translateX(4px);
+            transition-duration: 200ms;
+        }
+        .nav-item-inactive {
+            color: #666666;
+        }
+        .nav-item-inactive:hover {
+            background-color: #eeeeee;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+    </style>
+</head>
+<body class="bg-background text-text-main font-body-md antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="fixed md:static flex flex-col h-full py-8 px-4 border-r border-surface-container bg-surface-container-low w-64 z-20 shrink-0 hidden md:flex">
+<div class="mb-10 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A minimalist high-fashion editorial portrait of a sophisticated person used as an avatar, very bright lighting, clean neutral background, slight lavender tint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAssCocU5XEIhXCbk3KpAzJegxeewWjkYflJFAgHL8SomnX2ieVBvvNn7f-N0pLxyL70Alw2aXEdtMeuBtcITbHvyDanMScyKM3uw3siaxK3of0g7GSIiuDO_2oZKmBIFLJ5a4F2QDtUTVipAEs1eo9PNP1EnijWykFyCpRXoLIEXtsOWYL0nzZSMtVlOiBKE5UuWUo5z1zwuHkbE0rCP0caiUmpNYkBmDFG4UCcvhqxRN41j4SriWfGw">
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-lavender-deep">AETHEL Admin</h2>
+<p class="font-label-sm text-label-sm text-text-muted">Store Management</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<!-- Active: Overview -->
+<a class="flex items-center gap-3 px-4 py-3 nav-item-active" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Overview</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 nav-item-inactive rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="apparel">apparel</span>
+<span class="font-label-sm text-label-sm">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 nav-item-inactive rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 nav-item-inactive rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 nav-item-inactive rounded-lg mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col h-full overflow-y-auto w-full">
+<!-- Top App Bar (Mobile Only Placeholder to match spec, full topnav not requested, just simple header) -->
+<header class="md:hidden flex items-center justify-between p-margin-mobile border-b border-surface-container bg-surface-white">
+<h1 class="font-headline-md text-headline-md text-lavender-deep">AETHEL Admin</h1>
+<button class="material-symbols-outlined">menu</button>
+</header>
+<div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex-grow space-y-12">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg md:text-display-lg text-text-main">Dashboard Overview</h1>
+<p class="font-body-md text-body-md text-text-muted mt-2">Welcome back. Here's what's happening today.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-white border border-surface-container text-text-main font-label-sm text-label-sm px-6 py-3 rounded-DEFAULT hover:bg-surface-container-low transition-colors">
+                        Export Report
+                    </button>
+<button class="bg-lavender-deep text-surface-white font-label-sm text-label-sm px-6 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+                        New Product
+                    </button>
+</div>
+</div>
+<!-- Stats Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Stat Card 1 -->
+<div class="bg-surface-white p-6 rounded-lg border border-surface-container flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-lavender-mist rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+<div class="flex items-center gap-3 relative z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-lavender-deep">payments</span>
+</div>
+<h3 class="font-label-sm text-label-sm text-text-muted">Total Sales</h3>
+</div>
+<div class="relative z-10">
+<span class="font-headline-lg text-headline-lg">₹1,24,563.00</span>
+<div class="flex items-center gap-1 mt-2 text-sm text-green-600">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="">+14.5% from last month</span>
+</div>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-white p-6 rounded-lg border border-surface-container flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-container-low rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+<div class="flex items-center gap-3 relative z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-text-main">shopping_bag</span>
+</div>
+<h3 class="font-label-sm text-label-sm text-text-muted">Total Orders</h3>
+</div>
+<div class="relative z-10">
+<span class="font-headline-lg text-headline-lg">1,284</span>
+<div class="flex items-center gap-1 mt-2 text-sm text-green-600">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="">+5.2% from last month</span>
+</div>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-white p-6 rounded-lg border border-surface-container flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-container-low rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+<div class="flex items-center gap-3 relative z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-text-main">group</span>
+</div>
+<h3 class="font-label-sm text-label-sm text-text-muted">New Customers</h3>
+</div>
+<div class="relative z-10">
+<span class="font-headline-lg text-headline-lg">342</span>
+<div class="flex items-center gap-1 mt-2 text-sm text-text-muted">
+<span class="material-symbols-outlined text-sm">trending_flat</span>
+<span class="">Similar to last month</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Area Split -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Recent Orders List -->
+<div class="lg:col-span-2 bg-surface-white border border-surface-container rounded-lg overflow-hidden">
+<div class="p-6 border-b border-surface-container flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md">Recent Orders</h2>
+<a class="font-label-sm text-label-sm text-lavender-deep hover:underline" href="#">View All</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container bg-surface-container-low">
+<th class="p-4 font-label-sm text-label-sm text-text-muted font-normal">Order ID</th>
+<th class="p-4 font-label-sm text-label-sm text-text-muted font-normal">Customer</th>
+<th class="p-4 font-label-sm text-label-sm text-text-muted font-normal">Date</th>
+<th class="p-4 font-label-sm text-label-sm text-text-muted font-normal">Amount</th>
+<th class="p-4 font-label-sm text-label-sm text-text-muted font-normal">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="border-b border-surface-container hover:bg-surface-container-lowest transition-colors"><td class="p-4 font-label-sm">#ORD-9932</td><td class="p-4 flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden"><img class="w-full h-full object-cover" data-alt="A small abstract minimalist portrait, soft tones, high key lighting, neutral background, suitable for a tiny avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk5IDsgxznCgoNnSbbeq62vAbIp0sI9hMh7na4M5_KA_YObCyVs7-tDbce-oBvTDfMn0xei0DIwCfUVCCTQeMeQAM9cbv8L2nTE6CdocIRFeQKlsohDC9T7zFtNMoAGcczFZ-kKTodTiB9EA0IKklE04UYC4QRvvLPAxb-gYAGF0KwRbQ5-tzlk040k7w9SR4rDBjkem4obD_TrVaF_Pq6GqUVy1oQra8t6oCrDORvZc-GKLlpm-JPRg"></div>Priya Lakshmi</td><td class="p-4 text-text-muted text-sm">Today, 10:42 AM</td><td class="p-4">₹35,000.00</td><td class="p-4"><span class="inline-flex items-center px-2 py-1 rounded bg-lavender-mist text-lavender-deep font-label-sm text-[10px]">Processing</span></td></tr>
+<tr class="border-b border-surface-container hover:bg-surface-container-lowest transition-colors"><td class="p-4 font-label-sm">#ORD-9931</td><td class="p-4 flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden"><img class="w-full h-full object-cover" data-alt="A small abstract minimalist portrait, soft tones, high key lighting, neutral background, suitable for a tiny avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPmaUXzWZOqrZftuDKGekUyzCZA1QK2s0kQShIumYQPmbm-e4upRYfpns3E96T-hA6qjLZs9QfczWciyOjqLKFqlbqhHhVM-347Ee34yv9863KSmvH7R01Fac8lN6fDwggEAKPHeRUySrpza6-LSFEZpa98K9xrRp_VDcatp5GuEzpl4EbPNbrGzynlPjkec0v5HkeidUiu5AYdzn45hsq4v4uv7wcIcnnYNCUYp3f9LrZPEWYPNd-Cw"></div>Rajesh Kannan</td><td class="p-4 text-text-muted text-sm">Yesterday, 4:15 PM</td><td class="p-4">₹95,000.00</td><td class="p-4"><span class="inline-flex items-center px-2 py-1 rounded bg-surface-container text-text-main font-label-sm text-[10px]">Shipped</span></td></tr>
+<tr class="hover:bg-surface-container-lowest transition-colors"><td class="p-4 font-label-sm">#ORD-9930</td><td class="p-4 flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden"><img class="w-full h-full object-cover" data-alt="A small abstract minimalist portrait, soft tones, high key lighting, neutral background, suitable for a tiny avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE1o7QCIR61J4Hw2MRbQ67fZE_Lg225iRRqmMSLuv9lAEkOByGxAw5nPWrv8GS1rx-gPosDHMd7cB-wyAe8FPTQ0mxWUStsWetOYc69zlCKiDrk_YltB7Vs4fwc6VaSvpmwkzFvHJACP2bVgD_wUZP_zS1l-Q6qZwy-0QLn1l6rfOPtzMflAwbE25JzPOKIatj_Ofzb7PkZhaq7YPEQ5rd9YMzB5I7dQx0pNxxFmqBv5PSqvtWJ8WN2A"></div>Deepa Venkat</td><td class="p-4 text-text-muted text-sm">Yesterday, 11:20 AM</td><td class="p-4">₹6,500.00</td><td class="p-4"><span class="inline-flex items-center px-2 py-1 rounded bg-surface-container text-text-main font-label-sm text-[10px]">Delivered</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Quick Actions & Insights (Right Column) -->
+<div class="space-y-8">
+<!-- Quick Actions -->
+<div class="bg-surface-white border border-surface-container rounded-lg p-6">
+<h2 class="font-headline-md text-headline-md mb-6">Quick Actions</h2>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center p-4 border border-surface-container rounded hover:border-lavender-deep hover:bg-lavender-mist transition-all group">
+<span class="material-symbols-outlined text-text-muted group-hover:text-lavender-deep mb-2">inventory_2</span>
+<span class="font-label-sm text-label-sm text-center">Add Product</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 border border-surface-container rounded hover:border-lavender-deep hover:bg-lavender-mist transition-all group">
+<span class="material-symbols-outlined text-text-muted group-hover:text-lavender-deep mb-2">local_offer</span>
+<span class="font-label-sm text-label-sm text-center">Create Discount</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 border border-surface-container rounded hover:border-lavender-deep hover:bg-lavender-mist transition-all group">
+<span class="material-symbols-outlined text-text-muted group-hover:text-lavender-deep mb-2">mail</span>
+<span class="font-label-sm text-label-sm text-center">Email Campaign</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 border border-surface-container rounded hover:border-lavender-deep hover:bg-lavender-mist transition-all group">
+<span class="material-symbols-outlined text-text-muted group-hover:text-lavender-deep mb-2">settings</span>
+<span class="font-label-sm text-label-sm text-center">Store Settings</span>
+</button>
+</div>
+</div>
+<!-- Highlight / Mini Promo spot -->
+<div class="bg-lavender-mist rounded-lg p-6 relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-lavender-deep mb-2">New Editorial Live</h3>
+<p class="font-body-md text-body-md text-text-main text-sm mb-4">The Fall/Winter lookbook is currently driving 40% of today's traffic.</p>
+<a class="font-label-sm text-label-sm text-lavender-deep flex items-center gap-1 hover:opacity-70 transition-opacity" href="#">
+                                View Analytics <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+
+</body></html>
