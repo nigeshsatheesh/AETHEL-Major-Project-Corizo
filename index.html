@@ -1,381 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aethel Lavender Fashion Hub - Stitch Project Showcase</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>AETHEL | Sign In &amp; Join</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1c",
+                        "primary-container": "#e6e6fa",
+                        "on-tertiary-fixed-variant": "#50462f",
+                        "on-secondary-container": "#636262",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#d5c5a7",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-tint": "#5c5d6e",
+                        "background": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "primary": "#5c5d6e",
+                        "on-primary-fixed-variant": "#444655",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#656677",
+                        "tertiary-container": "#f7e6c7",
+                        "lavender-deep": "#967BB6",
+                        "tertiary-fixed": "#f1e1c2",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-container": "#73664e",
+                        "tertiary": "#695d45",
+                        "text-main": "#111111",
+                        "primary-fixed-dim": "#c5c5d8",
+                        "secondary-container": "#e2dfde",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-fixed": "#231a08",
+                        "surface-variant": "#e2e2e2",
+                        "outline-variant": "#c7c5cc",
+                        "on-surface-variant": "#46464c",
+                        "surface-dim": "#dadada",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface": "#1a1c1c",
+                        "surface-white": "#FFFFFF",
+                        "inverse-primary": "#c5c5d8",
+                        "primary-fixed": "#e1e1f5",
+                        "on-error-container": "#93000a",
+                        "secondary": "#5f5e5e",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2f3131",
+                        "lavender-mist": "#F3F3FF",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "text-muted": "#666666",
+                        "outline": "#77767d",
+                        "on-primary-fixed": "#191b29",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "unit": "4px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "display-lg": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg-dark: #09070f;
-            --card-bg: #151024;
-            --card-hover: #1f1836;
-            --border-color: #2b2046;
-            --accent-purple: #8b5cf6;
-            --accent-lavender: #c084fc;
-            --text-light: #f3f0ff;
-            --text-muted: #a79fc2;
-            --badge-bg: rgba(192, 132, 252, 0.12);
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            min-height: 100vh;
-            padding: 2.5rem 1.5rem;
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(192, 132, 252, 0.12) 0%, transparent 40%);
-        }
-
-        header {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 3.5rem auto;
-        }
-
-        .logo-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            background: rgba(139, 92, 246, 0.15);
-            border: 1px solid rgba(192, 132, 252, 0.3);
-            border-radius: 100px;
-            font-size: 0.85rem;
-            color: var(--accent-lavender);
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 20%, #e9d5ff 60%, #c084fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        p.subtitle {
-            color: var(--text-muted);
-            font-size: 1.15rem;
-            line-height: 1.6;
-        }
-
-        .project-meta {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .project-meta code {
-            font-family: monospace;
-            color: var(--accent-lavender);
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-lavender);
-            background-color: var(--card-hover);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
-        }
-
-        .card-img-container {
-            height: 260px;
-            overflow: hidden;
-            background-color: #0b0814;
-            position: relative;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .card-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-            transition: transform 0.6s ease;
-        }
-
-        .card:hover .card-img-container img {
-            transform: scale(1.06);
-        }
-
-        .screen-num {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(15, 11, 26, 0.85);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-light);
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 8px;
-        }
-
-        .card-body {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-
-        .screen-id {
-            font-size: 0.8rem;
-            color: var(--accent-lavender);
-            font-family: monospace;
-            margin-bottom: 1.5rem;
-            background: var(--badge-bg);
-            padding: 4px 10px;
-            border-radius: 6px;
-            display: inline-block;
-            border: 1px solid rgba(192, 132, 252, 0.2);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-purple), #6d28d9);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #9333ea, #7c3aed);
-            box-shadow: 0 6px 18px rgba(139, 92, 246, 0.5);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
-        }
-
-        footer a {
-            color: var(--accent-lavender);
-            text-decoration: none;
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 </head>
-<body>
+<body class="bg-background text-text-main font-body-md antialiased min-h-screen flex flex-col justify-between">
 
-    <header>
-        <div class="logo-badge">🪻 Stitch UI Project Showcase</div>
-        <h1>Aethel Lavender Fashion Hub</h1>
-        <p class="subtitle">Complete collection of responsive web screens and UI code assets downloaded via Stitch API.</p>
-        <div class="project-meta">
-            <span>Project ID: <code>10969939508210603174</code></span>
-            <span>Maintainer: <code>@nigeshsatheesh</code></span>
-        </div>
-    </header>
+    <!-- Top Navigation Header (Google Stitch UI) -->
+    <nav class="bg-surface-white w-full sticky top-0 z-50 border-b border-surface-container transition-all duration-300">
+        <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-5 max-w-container-max mx-auto">
+            <!-- Brand Logo -->
+            <a class="font-headline-lg text-headline-lg tracking-tighter text-text-main flex items-center gap-2" href="./06-shop-modern-fashion/index.html">
+                <span class="w-8 h-8 rounded-full bg-lavender-deep text-surface-white flex items-center justify-center font-bold text-base">Æ</span>
+                AETHEL
+            </a>
 
-    <div class="grid">
-        <!-- Screen 1 -->
-        <div class="card">
-            <div class="card-img-container">
-                <span class="screen-num">Screen 01</span>
-                <img src="./01-admin-orders-customers/screenshot.png" alt="Aethel Admin - Orders & Customers">
-            </div>
-            <div class="card-body">
-                <div>
-                    <div class="card-title">Aethel Admin - Orders & Customers</div>
-                    <div class="screen-id">ID: e2b2fc96f1c847d8b4879495c51d0227</div>
-                </div>
-                <div class="btn-group">
-                    <a href="./01-admin-orders-customers/index.html" class="btn btn-primary" target="_blank">View Code</a>
-                    <a href="./01-admin-orders-customers/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
-                </div>
+            <!-- Quick Navigation Links -->
+            <div class="flex items-center space-x-6">
+                <a href="./06-shop-modern-fashion/index.html" class="font-label-sm text-label-sm text-text-muted hover:text-lavender-deep uppercase tracking-widest transition-colors flex items-center gap-1">
+                    Explore Shop
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+                <a href="./03-admin-overview/index.html" class="hidden sm:inline-flex font-label-sm text-label-sm text-text-muted hover:text-text-main uppercase tracking-widest transition-colors">
+                    Admin Portal
+                </a>
             </div>
         </div>
+    </nav>
 
-        <!-- Screen 2 -->
-        <div class="card">
-            <div class="card-img-container">
-                <span class="screen-num">Screen 02</span>
-                <img src="./02-admin-add-product/screenshot.png" alt="Aethel Admin - Add Product">
+    <!-- Main Container - Stitch UI Sign In / Register Form -->
+    <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16 flex items-center justify-center">
+        
+        <div class="w-full max-w-md bg-surface-white border border-surface-container-high rounded-xl p-8 md:p-10 shadow-sm transition-all duration-300 hover:shadow-md">
+            
+            <!-- Auth Toggle Tabs -->
+            <div class="flex border-b border-surface-container mb-8">
+                <button id="tab-login" onclick="switchTab('login')" class="flex-1 pb-3 text-center font-headline-md text-base font-semibold text-text-main border-b-2 border-lavender-deep transition-all">
+                    Sign In
+                </button>
+                <button id="tab-register" onclick="switchTab('register')" class="flex-1 pb-3 text-center font-headline-md text-base font-semibold text-text-muted border-b-2 border-transparent hover:text-text-main transition-all">
+                    Create Account
+                </button>
             </div>
-            <div class="card-body">
-                <div>
-                    <div class="card-title">Aethel Admin - Add Product</div>
-                    <div class="screen-id">ID: 6b418cd50a984059b829e838bae75f1c</div>
+
+            <!-- Login Form Section -->
+            <div id="form-login" class="space-y-6">
+                <div class="space-y-1 text-center sm:text-left">
+                    <h1 class="font-headline-lg text-2xl text-text-main">Welcome Back</h1>
+                    <p class="font-body-md text-sm text-text-muted">Sign in to your Aethel account to continue shopping.</p>
                 </div>
-                <div class="btn-group">
-                    <a href="./02-admin-add-product/index.html" class="btn btn-primary" target="_blank">View Code</a>
-                    <a href="./02-admin-add-product/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
+
+                <form onsubmit="handleAuthSubmit(event)" class="space-y-5">
+                    <div>
+                        <label class="block font-label-sm text-label-sm text-text-main uppercase tracking-wider mb-2">Email Address</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-text-muted text-xl">mail</span>
+                            <input type="email" required value="alex.morgan@aethel.com" placeholder="name@domain.com" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-surface-container-high rounded-lg text-text-main placeholder-text-muted focus:outline-none focus:border-lavender-deep focus:ring-1 focus:ring-lavender-deep transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="block font-label-sm text-label-sm text-text-main uppercase tracking-wider">Password</label>
+                            <a href="#" class="text-xs text-lavender-deep hover:underline">Forgot password?</a>
+                        </div>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-text-muted text-xl">lock</span>
+                            <input type="password" required value="••••••••" placeholder="••••••••" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-surface-container-high rounded-lg text-text-main placeholder-text-muted focus:outline-none focus:border-lavender-deep focus:ring-1 focus:ring-lavender-deep transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-1">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" checked class="rounded border-surface-container-high text-lavender-deep focus:ring-lavender-deep w-4 h-4">
+                            <span class="font-body-md text-xs text-text-muted">Keep me signed in</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-lavender-deep text-surface-white font-label-sm text-label-sm py-4 rounded-lg uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group">
+                        <span>Sign In to Homepage</span>
+                        <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Register Form Section (Initially Hidden) -->
+            <div id="form-register" class="space-y-6 hidden">
+                <div class="space-y-1 text-center sm:text-left">
+                    <h1 class="font-headline-lg text-2xl text-text-main">Join Aethel</h1>
+                    <p class="font-body-md text-sm text-text-muted">Create an account for personalized modern fashion recommendations.</p>
                 </div>
+
+                <form onsubmit="handleAuthSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block font-label-sm text-label-sm text-text-main uppercase tracking-wider mb-2">Full Name</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-text-muted text-xl">person</span>
+                            <input type="text" required placeholder="Alex Morgan" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-surface-container-high rounded-lg text-text-main placeholder-text-muted focus:outline-none focus:border-lavender-deep focus:ring-1 focus:ring-lavender-deep transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block font-label-sm text-label-sm text-text-main uppercase tracking-wider mb-2">Email Address</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-text-muted text-xl">mail</span>
+                            <input type="email" required placeholder="name@domain.com" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-surface-container-high rounded-lg text-text-main placeholder-text-muted focus:outline-none focus:border-lavender-deep focus:ring-1 focus:ring-lavender-deep transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block font-label-sm text-label-sm text-text-main uppercase tracking-wider mb-2">Password</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-text-muted text-xl">lock</span>
+                            <input type="password" required placeholder="At least 8 characters" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-surface-container-high rounded-lg text-text-main placeholder-text-muted focus:outline-none focus:border-lavender-deep focus:ring-1 focus:ring-lavender-deep transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 pt-1">
+                        <input type="checkbox" required class="rounded border-surface-container-high text-lavender-deep focus:ring-lavender-deep w-4 h-4">
+                        <span class="font-body-md text-xs text-text-muted">I agree to the <a href="#" class="underline hover:text-text-main">Terms</a> &amp; <a href="#" class="underline hover:text-text-main">Privacy Policy</a></span>
+                    </div>
+
+                    <button type="submit" class="w-full bg-lavender-deep text-surface-white font-label-sm text-label-sm py-4 rounded-lg uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group">
+                        <span>Register &amp; Continue to Shop</span>
+                        <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Social Divider -->
+            <div class="relative flex items-center justify-center my-6">
+                <div class="border-t border-surface-container w-full"></div>
+                <span class="bg-surface-white px-3 font-label-sm text-[11px] text-text-muted uppercase tracking-widest absolute">Or</span>
+            </div>
+
+            <!-- Social Sign-in Buttons -->
+            <div class="space-y-3">
+                <a href="./06-shop-modern-fashion/index.html" class="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg border border-surface-container-high bg-surface-container-low text-text-main font-label-sm text-xs uppercase tracking-wider hover:border-lavender-deep transition-all">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+                    Continue with Google
+                </a>
+            </div>
+
+            <!-- Direct Navigation Link -->
+            <div class="mt-8 text-center border-t border-surface-container pt-4">
+                <a href="./06-shop-modern-fashion/index.html" class="font-label-sm text-xs text-lavender-deep hover:underline uppercase tracking-wider flex items-center justify-center gap-1">
+                    <span>Skip Authentication &amp; Go to Homepage</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
             </div>
         </div>
+    </main>
 
-        <!-- Screen 3 -->
-        <div class="card">
-            <div class="card-img-container">
-                <span class="screen-num">Screen 03</span>
-                <img src="./03-admin-overview/screenshot.png" alt="Aethel Admin - Overview">
-            </div>
-            <div class="card-body">
-                <div>
-                    <div class="card-title">Aethel Admin - Overview</div>
-                    <div class="screen-id">ID: 157957aa5ced44a48669f6e2ecbf886f</div>
-                </div>
-                <div class="btn-group">
-                    <a href="./03-admin-overview/index.html" class="btn btn-primary" target="_blank">View Code</a>
-                    <a href="./03-admin-overview/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Screen 4 -->
-        <div class="card">
-            <div class="card-img-container">
-                <span class="screen-num">Screen 04</span>
-                <img src="./04-checkout-confirmation/screenshot.png" alt="Aethel - Checkout & Confirmation">
-            </div>
-            <div class="card-body">
-                <div>
-                    <div class="card-title">Aethel - Checkout & Confirmation</div>
-                    <div class="screen-id">ID: efac51e898fc4842856bb60d1137cbef</div>
-                </div>
-                <div class="btn-group">
-                    <a href="./04-checkout-confirmation/index.html" class="btn btn-primary" target="_blank">View Code</a>
-                    <a href="./04-checkout-confirmation/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Screen 5 -->
-        <div class="card">
-            <div class="card-img-container">
-                <span class="screen-num">Screen 05</span>
-                <img src="./05-sign-in-or-join/screenshot.png" alt="Aethel - Sign In or Join">
-            </div>
-            <div class="card-body">
-                <div>
-                    <div class="card-title">Aethel - Sign In or Join</div>
-                    <div class="screen-id">ID: 9d3af3b80494405994ed3c6d88f2fe8f</div>
-                </div>
-                <div class="btn-group">
-                    <a href="./05-sign-in-or-join/index.html" class="btn btn-primary" target="_blank">View Code</a>
-                    <a href="./05-sign-in-or-join/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Screen 6 -->
-        <div class="card">
-            <div class="card-img-container">
-                <span class="screen-num">Screen 06</span>
-                <img src="./06-shop-modern-fashion/screenshot.png" alt="Aethel - Shop Modern Fashion">
-            </div>
-            <div class="card-body">
-                <div>
-                    <div class="card-title">Aethel - Shop Modern Fashion</div>
-                    <div class="screen-id">ID: 205ed935836e4f5691da956fc6384535</div>
-                </div>
-                <div class="btn-group">
-                    <a href="./06-shop-modern-fashion/index.html" class="btn btn-primary" target="_blank">View Code</a>
-                    <a href="./06-shop-modern-fashion/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Screen 7 -->
-        <div class="card">
-            <div class="card-img-container">
-                <span class="screen-num">Screen 07</span>
-                <img src="./07-oversized-lavender-knit-sweater/screenshot.png" alt="Aethel - Oversized Lavender Knit Sweater">
-            </div>
-            <div class="card-body">
-                <div>
-                    <div class="card-title">Aethel - Oversized Lavender Knit Sweater</div>
-                    <div class="screen-id">ID: ca0a42b9d6ce4f54ad173afa4d470a1d</div>
-                </div>
-                <div class="btn-group">
-                    <a href="./07-oversized-lavender-knit-sweater/index.html" class="btn btn-primary" target="_blank">View Code</a>
-                    <a href="./07-oversized-lavender-knit-sweater/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>Aethel Lavender Fashion Hub • Corizo MERN Stack Major Project • <a href="https://github.com/nigeshsatheesh/AETHEL-Major-Project-Corizo" target="_blank">GitHub Repo</a></p>
+    <!-- Footer (Google Stitch UI) -->
+    <footer class="bg-surface-white border-t border-surface-container py-6 text-center">
+        <p class="font-body-md text-xs text-text-muted">
+            © 2026 AETHEL Fashion Hub • Built with Google Stitch UI • Corizo Major Project
+        </p>
     </footer>
 
+    <!-- Interactive JS to switch tabs & navigate to homepage on submit -->
+    <script>
+        function switchTab(tab) {
+            const loginTab = document.getElementById('tab-login');
+            const registerTab = document.getElementById('tab-register');
+            const loginForm = document.getElementById('form-login');
+            const registerForm = document.getElementById('form-register');
+
+            if (tab === 'login') {
+                loginTab.className = "flex-1 pb-3 text-center font-headline-md text-base font-semibold text-text-main border-b-2 border-lavender-deep transition-all";
+                registerTab.className = "flex-1 pb-3 text-center font-headline-md text-base font-semibold text-text-muted border-b-2 border-transparent hover:text-text-main transition-all";
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            } else {
+                registerTab.className = "flex-1 pb-3 text-center font-headline-md text-base font-semibold text-text-main border-b-2 border-lavender-deep transition-all";
+                loginTab.className = "flex-1 pb-3 text-center font-headline-md text-base font-semibold text-text-muted border-b-2 border-transparent hover:text-text-main transition-all";
+                registerForm.classList.remove('hidden');
+                loginForm.classList.add('hidden');
+            }
+        }
+
+        function handleAuthSubmit(event) {
+            event.preventDefault();
+            // Redirect to Aethel Modern Fashion Homepage
+            window.location.href = './06-shop-modern-fashion/index.html';
+        }
+    </script>
 </body>
 </html>
