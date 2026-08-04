@@ -1,1 +1,381 @@
-﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aethel Lavender Fashion Hub - Stitch Project Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #09070f;
+            --card-bg: #151024;
+            --card-hover: #1f1836;
+            --border-color: #2b2046;
+            --accent-purple: #8b5cf6;
+            --accent-lavender: #c084fc;
+            --text-light: #f3f0ff;
+            --text-muted: #a79fc2;
+            --badge-bg: rgba(192, 132, 252, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 2.5rem 1.5rem;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(192, 132, 252, 0.12) 0%, transparent 40%);
+        }
+
+        header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(192, 132, 252, 0.3);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--accent-lavender);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 20%, #e9d5ff 60%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        .project-meta {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .project-meta code {
+            font-family: monospace;
+            color: var(--accent-lavender);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-lavender);
+            background-color: var(--card-hover);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .card-img-container {
+            height: 260px;
+            overflow: hidden;
+            background-color: #0b0814;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.6s ease;
+        }
+
+        .card:hover .card-img-container img {
+            transform: scale(1.06);
+        }
+
+        .screen-num {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(15, 11, 26, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .screen-id {
+            font-size: 0.8rem;
+            color: var(--accent-lavender);
+            font-family: monospace;
+            margin-bottom: 1.5rem;
+            background: var(--badge-bg);
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            border: 1px solid rgba(192, 132, 252, 0.2);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-purple), #6d28d9);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #9333ea, #7c3aed);
+            box-shadow: 0 6px 18px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        footer a {
+            color: var(--accent-lavender);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-badge">🪻 Stitch UI Project Showcase</div>
+        <h1>Aethel Lavender Fashion Hub</h1>
+        <p class="subtitle">Complete collection of responsive web screens and UI code assets downloaded via Stitch API.</p>
+        <div class="project-meta">
+            <span>Project ID: <code>10969939508210603174</code></span>
+            <span>Maintainer: <code>@nigeshsatheesh</code></span>
+        </div>
+    </header>
+
+    <div class="grid">
+        <!-- Screen 1 -->
+        <div class="card">
+            <div class="card-img-container">
+                <span class="screen-num">Screen 01</span>
+                <img src="./01-admin-orders-customers/screenshot.png" alt="Aethel Admin - Orders & Customers">
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="card-title">Aethel Admin - Orders & Customers</div>
+                    <div class="screen-id">ID: e2b2fc96f1c847d8b4879495c51d0227</div>
+                </div>
+                <div class="btn-group">
+                    <a href="./01-admin-orders-customers/index.html" class="btn btn-primary" target="_blank">View Code</a>
+                    <a href="./01-admin-orders-customers/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2 -->
+        <div class="card">
+            <div class="card-img-container">
+                <span class="screen-num">Screen 02</span>
+                <img src="./02-admin-add-product/screenshot.png" alt="Aethel Admin - Add Product">
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="card-title">Aethel Admin - Add Product</div>
+                    <div class="screen-id">ID: 6b418cd50a984059b829e838bae75f1c</div>
+                </div>
+                <div class="btn-group">
+                    <a href="./02-admin-add-product/index.html" class="btn btn-primary" target="_blank">View Code</a>
+                    <a href="./02-admin-add-product/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 3 -->
+        <div class="card">
+            <div class="card-img-container">
+                <span class="screen-num">Screen 03</span>
+                <img src="./03-admin-overview/screenshot.png" alt="Aethel Admin - Overview">
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="card-title">Aethel Admin - Overview</div>
+                    <div class="screen-id">ID: 157957aa5ced44a48669f6e2ecbf886f</div>
+                </div>
+                <div class="btn-group">
+                    <a href="./03-admin-overview/index.html" class="btn btn-primary" target="_blank">View Code</a>
+                    <a href="./03-admin-overview/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 4 -->
+        <div class="card">
+            <div class="card-img-container">
+                <span class="screen-num">Screen 04</span>
+                <img src="./04-checkout-confirmation/screenshot.png" alt="Aethel - Checkout & Confirmation">
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="card-title">Aethel - Checkout & Confirmation</div>
+                    <div class="screen-id">ID: efac51e898fc4842856bb60d1137cbef</div>
+                </div>
+                <div class="btn-group">
+                    <a href="./04-checkout-confirmation/index.html" class="btn btn-primary" target="_blank">View Code</a>
+                    <a href="./04-checkout-confirmation/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 5 -->
+        <div class="card">
+            <div class="card-img-container">
+                <span class="screen-num">Screen 05</span>
+                <img src="./05-sign-in-or-join/screenshot.png" alt="Aethel - Sign In or Join">
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="card-title">Aethel - Sign In or Join</div>
+                    <div class="screen-id">ID: 9d3af3b80494405994ed3c6d88f2fe8f</div>
+                </div>
+                <div class="btn-group">
+                    <a href="./05-sign-in-or-join/index.html" class="btn btn-primary" target="_blank">View Code</a>
+                    <a href="./05-sign-in-or-join/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 6 -->
+        <div class="card">
+            <div class="card-img-container">
+                <span class="screen-num">Screen 06</span>
+                <img src="./06-shop-modern-fashion/screenshot.png" alt="Aethel - Shop Modern Fashion">
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="card-title">Aethel - Shop Modern Fashion</div>
+                    <div class="screen-id">ID: 205ed935836e4f5691da956fc6384535</div>
+                </div>
+                <div class="btn-group">
+                    <a href="./06-shop-modern-fashion/index.html" class="btn btn-primary" target="_blank">View Code</a>
+                    <a href="./06-shop-modern-fashion/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 7 -->
+        <div class="card">
+            <div class="card-img-container">
+                <span class="screen-num">Screen 07</span>
+                <img src="./07-oversized-lavender-knit-sweater/screenshot.png" alt="Aethel - Oversized Lavender Knit Sweater">
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="card-title">Aethel - Oversized Lavender Knit Sweater</div>
+                    <div class="screen-id">ID: ca0a42b9d6ce4f54ad173afa4d470a1d</div>
+                </div>
+                <div class="btn-group">
+                    <a href="./07-oversized-lavender-knit-sweater/index.html" class="btn btn-primary" target="_blank">View Code</a>
+                    <a href="./07-oversized-lavender-knit-sweater/screenshot.png" class="btn btn-secondary" target="_blank">Screenshot</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Aethel Lavender Fashion Hub • Corizo MERN Stack Major Project • <a href="https://github.com/nigeshsatheesh/AETHEL-Major-Project-Corizo" target="_blank">GitHub Repo</a></p>
+    </footer>
+
+</body>
+</html>
