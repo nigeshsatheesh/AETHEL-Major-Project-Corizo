@@ -134,17 +134,47 @@
                 AETHEL
             </a>
 
-            <!-- Quick Navigation Links -->
-            <div class="flex items-center space-x-6">
+            <!-- Quick Navigation Links & Interactive Action Icons -->
+            <div class="flex items-center space-x-4 md:space-x-6">
                 <a href="./06-shop-modern-fashion/index.html"
                     class="font-label-sm text-label-sm text-text-muted hover:text-lavender-deep uppercase tracking-widest transition-colors flex items-center gap-1">
                     Explore Shop
                     <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </a>
                 <a href="./03-admin-overview/index.html"
-                    class="hidden sm:inline-flex font-label-sm text-label-sm text-text-muted hover:text-text-main uppercase tracking-widest transition-colors">
+                    class="hidden md:inline-flex font-label-sm text-label-sm text-text-muted hover:text-text-main uppercase tracking-widest transition-colors">
                     Admin Portal
                 </a>
+
+                <!-- Interactive Header Action Buttons -->
+                <div class="flex items-center space-x-2 pl-2 border-l border-surface-container">
+                    <!-- Search Button -->
+                    <a href="./06-shop-modern-fashion/index.html?open=search" title="Search Products"
+                        class="text-text-main hover:opacity-70 transition-all flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low">
+                        <span class="material-symbols-outlined">search</span>
+                    </a>
+
+                    <!-- Profile Button -->
+                    <a href="./06-shop-modern-fashion/index.html?open=profile" title="Account Details (nigeshsatheesh@gmail.com)"
+                        class="text-text-main hover:opacity-70 transition-all flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low relative">
+                        <span class="material-symbols-outlined">person</span>
+                        <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-emerald-500"></span>
+                    </a>
+
+                    <!-- Favourite / Wishlist Button -->
+                    <a href="./06-shop-modern-fashion/index.html?open=wishlist" title="View Wishlist / Favourites"
+                        class="text-text-main hover:opacity-70 transition-all flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low relative">
+                        <span class="material-symbols-outlined">favorite</span>
+                        <span class="absolute top-0 right-0 bg-lavender-deep text-surface-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                    </a>
+
+                    <!-- Cart Button -->
+                    <a href="./06-shop-modern-fashion/index.html?open=cart" title="Shopping Cart"
+                        class="text-text-main hover:opacity-70 transition-all flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low relative">
+                        <span class="material-symbols-outlined">shopping_bag</span>
+                        <span class="absolute top-0 right-0 bg-lavender-deep text-surface-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
