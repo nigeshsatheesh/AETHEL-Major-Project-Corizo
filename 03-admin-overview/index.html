@@ -6,6 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>AETHEL Admin Portal - Dashboard &amp; Settings</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;600&amp;display=swap"
         rel="stylesheet">
@@ -164,16 +165,18 @@
                 <span class="font-label-sm text-sm">Live Storefront</span>
             </a>
 
-            <!-- Persistent Settings Section (Always visible) -->
-            <button onclick="switchAdminTab('settings')" id="tab-btn-settings" class="flex items-center gap-3 px-4 py-3 nav-item-inactive rounded-lg w-full text-left transition-all mt-auto border-t border-surface-container pt-4">
-                <span class="material-symbols-outlined">settings</span>
-                <span class="font-label-sm text-sm">Store Settings</span>
-            </button>
+            <!-- Fixed Bottom Section (Store Settings & Sign Out) -->
+            <div class="mt-auto border-t border-surface-container pt-4 flex flex-col gap-1.5 shrink-0">
+                <button onclick="switchAdminTab('settings')" id="tab-btn-settings" class="flex items-center gap-3 px-4 py-3 nav-item-inactive rounded-lg w-full text-left transition-all">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="font-label-sm text-sm">Store Settings</span>
+                </button>
 
-            <a href="../index.html" class="flex items-center gap-3 px-4 py-3 text-rose-600 hover:bg-rose-50 rounded-lg w-full text-left transition-all">
-                <span class="material-symbols-outlined">logout</span>
-                <span class="font-label-sm text-sm">Sign Out</span>
-            </a>
+                <a href="../index.html" class="flex items-center gap-3 px-4 py-3 text-rose-600 hover:bg-rose-50 rounded-lg w-full text-left transition-all">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="font-label-sm text-sm">Sign Out</span>
+                </a>
+            </div>
         </nav>
     </aside>
 
@@ -197,8 +200,8 @@
                         <p class="font-body-md text-sm text-text-muted mt-1">Welcome back, Nigesh Satheesh. Here is your store overview today.</p>
                     </div>
                     <div class="flex gap-3">
-                        <button onclick="showAdminToast('Exporting analytics report PDF...')" class="bg-surface-white border border-surface-container text-text-main font-label-sm text-xs uppercase px-5 py-3 rounded-lg hover:bg-surface-container-low transition-colors shadow-xs">
-                            Export Report
+                        <button onclick="exportPDFReport()" class="bg-surface-white border border-surface-container text-text-main font-label-sm text-xs uppercase px-5 py-3 rounded-lg hover:bg-surface-container-low transition-colors shadow-xs flex items-center gap-2 cursor-pointer">
+                            <span class="material-symbols-outlined text-sm">picture_as_pdf</span> Export PDF Report
                         </button>
                         <button onclick="switchAdminTab('products')" class="bg-lavender-deep text-surface-white font-label-sm text-xs uppercase px-5 py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2 shadow-xs">
                             <span class="material-symbols-outlined text-sm">add</span> New Product
@@ -320,19 +323,19 @@
                         <button onclick="showAdminToast('Product updated')" class="text-xs text-lavender-deep font-semibold underline text-left">Edit Details</button>
                     </div>
                     <div class="bg-surface-white p-4 rounded-xl border border-surface-container flex flex-col space-y-3">
-                        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=95" class="w-full aspect-[3/4] object-cover rounded-lg">
+                        <img src="../assets/images/mens_minimalist_lavender_hoodie.png" class="w-full aspect-[3/4] object-cover rounded-lg">
                         <h4 class="font-semibold text-sm">Minimalist Heavyweight Hoodie</h4>
                         <p class="text-xs text-text-muted">Stock: 28 units • ₹4,199</p>
                         <button onclick="showAdminToast('Product updated')" class="text-xs text-lavender-deep font-semibold underline text-left">Edit Details</button>
                     </div>
                     <div class="bg-surface-white p-4 rounded-xl border border-surface-container flex flex-col space-y-3">
-                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1200&q=95" class="w-full aspect-[3/4] object-cover rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=1200&q=95" class="w-full aspect-[3/4] object-cover rounded-lg">
                         <h4 class="font-semibold text-sm">Structured Cotton Trench Coat</h4>
                         <p class="text-xs text-text-muted">Stock: 15 units • ₹9,999</p>
                         <button onclick="showAdminToast('Product updated')" class="text-xs text-lavender-deep font-semibold underline text-left">Edit Details</button>
                     </div>
                     <div class="bg-surface-white p-4 rounded-xl border border-surface-container flex flex-col space-y-3">
-                        <img src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1200&q=95" class="w-full aspect-[3/4] object-cover rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=95" class="w-full aspect-[3/4] object-cover rounded-lg">
                         <h4 class="font-semibold text-sm">Tailored Wool-blend Trousers</h4>
                         <p class="text-xs text-text-muted">Stock: 50 units • ₹5,299</p>
                         <button onclick="showAdminToast('Product updated')" class="text-xs text-lavender-deep font-semibold underline text-left">Edit Details</button>
@@ -484,10 +487,16 @@
                 
                 if (t === tabName) {
                     if (view) view.classList.remove('hidden');
-                    if (btn) btn.className = "flex items-center gap-3 px-4 py-3 nav-item-active w-full text-left transition-all";
+                    if (btn) {
+                        btn.classList.add('nav-item-active');
+                        btn.classList.remove('nav-item-inactive');
+                    }
                 } else {
                     if (view) view.classList.add('hidden');
-                    if (btn) btn.className = "flex items-center gap-3 px-4 py-3 nav-item-inactive rounded-lg w-full text-left transition-all";
+                    if (btn) {
+                        btn.classList.remove('nav-item-active');
+                        btn.classList.add('nav-item-inactive');
+                    }
                 }
             });
         }
@@ -505,6 +514,160 @@
         function saveSettings(event) {
             event.preventDefault();
             showAdminToast("Website settings saved successfully!");
+        }
+
+        function exportPDFReport() {
+            showAdminToast("Generating store PDF report...");
+
+            const reportContent = document.createElement('div');
+            reportContent.style.padding = '30px';
+            reportContent.style.fontFamily = 'Arial, sans-serif';
+            reportContent.style.color = '#1a1c1c';
+            reportContent.style.backgroundColor = '#ffffff';
+
+            const now = new Date().toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+            });
+
+            reportContent.innerHTML = `
+                <div style="border-bottom: 2px solid #967BB6; padding-bottom: 15px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h1 style="font-size: 22px; font-weight: bold; color: #967BB6; margin: 0;">AETHEL ONLINE FASHION STORE</h1>
+                        <p style="font-size: 13px; color: #666666; margin: 5px 0 0 0;">Executive Store Analytics & Performance Report</p>
+                    </div>
+                    <div style="text-align: right; font-size: 11px; color: #666666;">
+                        <p style="margin: 0;"><strong>Date:</strong> ${now}</p>
+                        <p style="margin: 3px 0 0 0;"><strong>Generated By:</strong> Nigesh Satheesh</p>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px;">
+                    <div style="background: #F3F3FF; padding: 15px; border-radius: 8px; border: 1px solid #dcdcfe;">
+                        <p style="font-size: 11px; text-transform: uppercase; color: #666; margin: 0 0 5px 0; font-weight: bold;">Total Revenue</p>
+                        <h2 style="font-size: 20px; font-weight: bold; color: #1a1c1c; margin: 0;">₹1,84,560.00</h2>
+                        <p style="font-size: 11px; color: #059669; margin: 5px 0 0 0; font-weight: bold;">+14.5% vs last month</p>
+                    </div>
+                    <div style="background: #F3F3FF; padding: 15px; border-radius: 8px; border: 1px solid #dcdcfe;">
+                        <p style="font-size: 11px; text-transform: uppercase; color: #666; margin: 0 0 5px 0; font-weight: bold;">Total Orders</p>
+                        <h2 style="font-size: 20px; font-weight: bold; color: #1a1c1c; margin: 0;">1,482</h2>
+                        <p style="font-size: 11px; color: #059669; margin: 5px 0 0 0; font-weight: bold;">+8.2% new orders</p>
+                    </div>
+                    <div style="background: #F3F3FF; padding: 15px; border-radius: 8px; border: 1px solid #dcdcfe;">
+                        <p style="font-size: 11px; text-transform: uppercase; color: #666; margin: 0 0 5px 0; font-weight: bold;">Active Customers</p>
+                        <h2 style="font-size: 20px; font-weight: bold; color: #1a1c1c; margin: 0;">942</h2>
+                        <p style="font-size: 11px; color: #059669; margin: 5px 0 0 0; font-weight: bold;">+18.4% new signups</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 15px; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 6px;">Recent Store Orders</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px; font-size: 12px;">
+                    <thead>
+                        <tr style="background: #f3f3f3; text-align: left;">
+                            <th style="padding: 8px; border-bottom: 1px solid #ddd;">Order ID</th>
+                            <th style="padding: 8px; border-bottom: 1px solid #ddd;">Customer</th>
+                            <th style="padding: 8px; border-bottom: 1px solid #ddd;">Items Purchased</th>
+                            <th style="padding: 8px; border-bottom: 1px solid #ddd;">Total Amount</th>
+                            <th style="padding: 8px; border-bottom: 1px solid #ddd;">Fulfillment Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee; font-family: monospace; font-weight: bold;">#100456</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Nigesh Satheesh</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Oversized Linen Blazer, Hoodie</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">₹11,198</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee; color: #047857; font-weight: bold;">Processing</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee; font-family: monospace; font-weight: bold;">#100455</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Ananya Sharma</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Rib-knit Midi Dress</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">₹3,999</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee; color: #1d4ed8; font-weight: bold;">Shipped</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee; font-family: monospace; font-weight: bold;">#100454</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Rohan Mehta</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Structured Trench Coat</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">₹9,999</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee; color: #6d28d9; font-weight: bold;">Delivered</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-size: 15px; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 6px;">Catalog & Inventory Status</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px; font-size: 12px;">
+                    <thead>
+                        <tr style="background: #f3f3f3; text-align: left;">
+                            <th style="padding: 8px; border-bottom: 1px solid #ddd;">Product Name</th>
+                            <th style="padding: 8px; border-bottom: 1px solid #ddd;">Category</th>
+                            <th style="padding: 8px; border-bottom: 1px solid #ddd;">Price</th>
+                            <th style="padding: 8px; border-bottom: 1px solid #ddd;">Current Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Oversized Linen Blend Blazer</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Ladies</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">₹6,999</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">42 units</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Minimalist Heavyweight Hoodie</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Men</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">₹4,199</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">28 units</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Structured Cotton Trench Coat</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Men</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">₹9,999</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">15 units</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Tailored Wool-blend Trousers</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Men</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">₹5,299</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">50 units</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; text-align: center; font-size: 11px; color: #888;">
+                    © 2026 AETHEL Online Fashion Store. All Rights Reserved. Built by Nigesh & Abdul Kalam Asath
+                </div>
+            `;
+
+            const opt = {
+                margin:       [10, 10, 10, 10],
+                filename:     'AETHEL_Store_Analytics_Report_2026.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            if (typeof html2pdf !== 'undefined') {
+                html2pdf().set(opt).from(reportContent).save().then(() => {
+                    showAdminToast("PDF Report downloaded: AETHEL_Store_Analytics_Report_2026.pdf");
+                }).catch(err => {
+                    console.error("PDF Export error:", err);
+                    triggerPrintFallback(reportContent.innerHTML);
+                });
+            } else {
+                triggerPrintFallback(reportContent.innerHTML);
+            }
+        }
+
+        function triggerPrintFallback(htmlString) {
+            const printWin = window.open('', '_blank');
+            printWin.document.write('<html><head><title>AETHEL Analytics Report</title><style>body{font-family:sans-serif;padding:20px;}</style></head><body>' + htmlString + '</body></html>');
+            printWin.document.close();
+            printWin.focus();
+            setTimeout(() => {
+                printWin.print();
+                printWin.close();
+            }, 500);
+            showAdminToast("Report export print window ready");
         }
     </script>
 
