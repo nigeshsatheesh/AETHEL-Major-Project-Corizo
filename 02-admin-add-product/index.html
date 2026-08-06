@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AETHEL Admin - Add Product</title>
-<!-- Google Fonts & Material Symbols -->
+
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
@@ -108,8 +108,7 @@
 <style>
         body { background-color: theme('colors.background'); color: theme('colors.text-main'); }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        
-        /* Custom Input Styles */
+
         .form-input {
             border: 1px solid theme('colors.surface-container');
             transition: all 0.2s ease;
@@ -122,7 +121,7 @@
     </style>
 </head>
 <body class="flex h-screen overflow-hidden antialiased selection:bg-lavender-mist selection:text-lavender-deep">
-<!-- SideNavBar (Shared Component) -->
+
 <nav class="docked left-0 h-screen w-64 bg-surface-container-low dark:bg-inverse-surface flex flex-col h-full py-8 px-4 border-r border-surface-container dark:border-on-surface-variant flex-shrink-0 z-20">
 <div class="mb-12 px-4 flex items-center gap-3">
 <div class="w-9 h-9 rounded-full bg-lavender-deep text-surface-white flex items-center justify-center font-bold shrink-0">
@@ -134,28 +133,28 @@
 </div>
 </div>
 <ul class="space-y-2 flex-1">
-<!-- Overview -->
+
 <li>
 <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-outline-variant hover:bg-surface-container dark:hover:bg-on-secondary-fixed-variant transition-colors group" href="#">
 <span class="material-symbols-outlined text-lg">dashboard</span>
 <span class="font-label-sm text-label-sm">Overview</span>
 </a>
 </li>
-<!-- Products (ACTIVE STATE) -->
+
 <li>
 <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-lavender-mist dark:bg-primary-container text-lavender-deep dark:text-on-primary-container font-bold translate-x-1 duration-200 shadow-sm" href="#">
 <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">apparel</span>
 <span class="font-label-sm text-label-sm">Products</span>
 </a>
 </li>
-<!-- Orders -->
+
 <li>
 <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-outline-variant hover:bg-surface-container dark:hover:bg-on-secondary-fixed-variant transition-colors group" href="#">
 <span class="material-symbols-outlined text-lg">shopping_cart</span>
 <span class="font-label-sm text-label-sm">Orders</span>
 </a>
 </li>
-<!-- Customers -->
+
 <li>
 <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted dark:text-outline-variant hover:bg-surface-container dark:hover:bg-on-secondary-fixed-variant transition-colors group" href="#">
 <span class="material-symbols-outlined text-lg">group</span>
@@ -163,7 +162,7 @@
 </a>
 </li>
 </ul>
-<!-- Fixed Bottom Section (Store Settings & Sign Out) -->
+
 <div class="mt-auto pt-4 border-t border-surface-container flex flex-col gap-1.5 shrink-0">
 <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:bg-surface-container transition-colors group" href="../03-admin-overview/index.html#settings">
 <span class="material-symbols-outlined text-text-muted group-hover:text-text-main transition-colors">settings</span>
@@ -175,10 +174,10 @@
 </a>
 </div>
 </nav>
-<!-- Main Content Canvas -->
+
 <main class="flex-1 overflow-y-auto bg-background relative">
 <div class="max-w-container-max mx-auto px-margin-desktop py-12 pb-32">
-<!-- Header Section -->
+
 <header class="flex items-center justify-between mb-12">
 <div>
 <a class="inline-flex items-center gap-2 font-label-sm text-label-sm text-text-muted hover:text-lavender-deep transition-colors mb-4" href="#">
@@ -197,24 +196,24 @@
                     </button>
 </div>
 </header>
-<!-- Form Layout (Bento Grid Style) -->
+
 <form class="grid grid-cols-1 xl:grid-cols-3 gap-8">
-<!-- Left Column (Larger) -->
+
 <div class="xl:col-span-2 space-y-8">
-<!-- Basic Information Card -->
+
 <div class="bg-surface-white border border-surface-container rounded p-8">
 <h3 class="font-headline-md text-headline-md mb-6">Basic Information</h3>
 <div class="space-y-6">
-<!-- Product Name -->
+
 <div>
 <label class="block font-label-sm text-label-sm text-text-main mb-2" for="product_name">Product Name <span class="text-error">*</span></label>
 <input class="form-input w-full bg-surface-white p-4 font-body-md text-body-md rounded text-text-main placeholder-text-muted" id="product_name" placeholder="e.g. Silk Organza Blouse" type="text"/>
 </div>
-<!-- Description -->
+
 <div>
 <label class="block font-label-sm text-label-sm text-text-main mb-2" for="product_description">Description <span class="text-error">*</span></label>
 <div class="border border-surface-container rounded bg-surface-white flex flex-col">
-<!-- Simple WYSIWYG Toolbar Mockup -->
+
 <div class="flex items-center gap-2 border-b border-surface-container p-2 bg-surface-container-low">
 <button class="p-1 text-text-muted hover:text-text-main rounded hover:bg-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-sm">format_bold</span></button>
 <button class="p-1 text-text-muted hover:text-text-main rounded hover:bg-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-sm">format_italic</span></button>
@@ -227,11 +226,11 @@
 </div>
 </div>
 </div>
-<!-- Pricing & Inventory Card -->
+
 <div class="bg-surface-white border border-surface-container rounded p-8">
 <h3 class="font-headline-md text-headline-md mb-6">Pricing &amp; Inventory</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Price -->
+
 <div>
 <label class="block font-label-sm text-label-sm text-text-main mb-2" for="price">Regular Price ($) <span class="text-error">*</span></label>
 <div class="relative">
@@ -239,7 +238,7 @@
 <input class="form-input w-full bg-surface-white py-4 pl-8 pr-4 font-body-md text-body-md rounded text-text-main placeholder-text-muted" id="price" placeholder="0.00" type="number"/>
 </div>
 </div>
-<!-- Sale Price -->
+
 <div>
 <label class="block font-label-sm text-label-sm text-text-main mb-2" for="sale_price">Sale Price ($)</label>
 <div class="relative">
@@ -247,12 +246,12 @@
 <input class="form-input w-full bg-surface-white py-4 pl-8 pr-4 font-body-md text-body-md rounded text-text-main placeholder-text-muted" id="sale_price" placeholder="0.00" type="number"/>
 </div>
 </div>
-<!-- SKU -->
+
 <div>
 <label class="block font-label-sm text-label-sm text-text-main mb-2" for="sku">SKU (Stock Keeping Unit)</label>
 <input class="form-input w-full bg-surface-white p-4 font-body-md text-body-md rounded text-text-main placeholder-text-muted" id="sku" placeholder="AET-001" type="text"/>
 </div>
-<!-- Barcode -->
+
 <div>
 <label class="block font-label-sm text-label-sm text-text-main mb-2" for="barcode">Barcode (ISBN, UPC, GTIN)</label>
 <input class="form-input w-full bg-surface-white p-4 font-body-md text-body-md rounded text-text-main placeholder-text-muted" id="barcode" placeholder="e.g. 123456789012" type="text"/>
@@ -260,9 +259,9 @@
 </div>
 </div>
 </div>
-<!-- Right Column (Smaller) -->
+
 <div class="xl:col-span-1 space-y-8">
-<!-- Media / Image Upload -->
+
 <div class="bg-surface-white border border-surface-container rounded p-8">
 <h3 class="font-headline-md text-headline-md mb-6">Product Media</h3>
 <div class="border-2 border-dashed border-surface-container rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col items-center justify-center p-12 text-center cursor-pointer group">
@@ -272,7 +271,7 @@
 <p class="font-label-sm text-label-sm text-text-main mb-1">Click to upload or drag and drop</p>
 <p class="font-body-md text-body-md text-text-muted text-sm">SVG, PNG, JPG or GIF (max. 800x400px)</p>
 </div>
-<!-- Empty states for additional images -->
+
 <div class="grid grid-cols-3 gap-4 mt-4">
 <div class="aspect-square border border-dashed border-surface-container rounded bg-surface-container-low flex items-center justify-center cursor-pointer hover:border-lavender-deep transition-colors">
 <span class="material-symbols-outlined text-text-muted">add</span>
@@ -285,11 +284,11 @@
 </div>
 </div>
 </div>
-<!-- Organization & Categories -->
+
 <div class="bg-surface-white border border-surface-container rounded p-8">
 <h3 class="font-headline-md text-headline-md mb-6">Organization</h3>
 <div class="space-y-6">
-<!-- Category Select -->
+
 <div>
 <label class="block font-label-sm text-label-sm text-text-main mb-2" for="category">Category</label>
 <div class="relative">
@@ -303,11 +302,11 @@
 <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">expand_more</span>
 </div>
 </div>
-<!-- Tags / Subcategory -->
+
 <div>
 <label class="block font-label-sm text-label-sm text-text-main mb-2" for="tags">Tags</label>
 <input class="form-input w-full bg-surface-white p-4 font-body-md text-body-md rounded text-text-main placeholder-text-muted mb-3" id="tags" placeholder="e.g. Summer, Silk, New Arrival" type="text"/>
-<!-- Rendered Chips Example -->
+
 <div class="flex flex-wrap gap-2">
 <span class="inline-flex items-center gap-1 px-3 py-1 bg-lavender-mist text-text-main font-label-sm text-label-sm rounded-sm">
                                         New Arrival
@@ -319,7 +318,7 @@
 </span>
 </div>
 </div>
-<!-- Status Toggle -->
+
 <div class="pt-4 border-t border-surface-container">
 <label class="flex items-center justify-between cursor-pointer">
 <div>

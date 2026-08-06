@@ -119,12 +119,11 @@
 
 <body class="bg-background text-text-main font-body-md antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Top Navigation Header (Google Stitch UI) -->
     <nav
         class="bg-surface-white w-full sticky top-0 z-50 border-b border-surface-container transition-all duration-300">
         <div
             class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-5 max-w-container-max mx-auto">
-            <!-- Brand Logo -->
+            
             <a class="font-headline-lg text-headline-lg tracking-tighter text-text-main flex items-center gap-2"
                 href="./06-shop-modern-fashion/index.html">
                 <span
@@ -134,7 +133,6 @@
                 AETHEL
             </a>
 
-            <!-- Quick Navigation Links & Interactive Action Icons -->
             <div class="flex items-center space-x-4 md:space-x-6">
                 <a href="./06-shop-modern-fashion/index.html"
                     class="font-label-sm text-label-sm text-text-muted hover:text-lavender-deep uppercase tracking-widest transition-colors flex items-center gap-1">
@@ -146,29 +144,25 @@
                     Admin Portal
                 </a>
 
-                <!-- Interactive Header Action Buttons -->
                 <div class="flex items-center space-x-2 pl-2 border-l border-surface-container">
-                    <!-- Search Button -->
+                    
                     <a href="./06-shop-modern-fashion/index.html?open=search" title="Search Products"
                         class="text-text-main hover:opacity-70 transition-all flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low">
                         <span class="material-symbols-outlined">search</span>
                     </a>
 
-                    <!-- Profile Button -->
                     <a href="./06-shop-modern-fashion/index.html?open=profile" title="Account Details (nigeshsatheesh@gmail.com)"
                         class="text-text-main hover:opacity-70 transition-all flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low relative">
                         <span class="material-symbols-outlined">person</span>
                         <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-emerald-500"></span>
                     </a>
 
-                    <!-- Favourite / Wishlist Button -->
                     <a href="./06-shop-modern-fashion/index.html?open=wishlist" title="View Wishlist / Favourites"
                         class="text-text-main hover:opacity-70 transition-all flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low relative">
                         <span class="material-symbols-outlined">favorite</span>
                         <span class="absolute top-0 right-0 bg-lavender-deep text-surface-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
                     </a>
 
-                    <!-- Cart Button -->
                     <a href="./06-shop-modern-fashion/index.html?open=cart" title="Shopping Cart"
                         class="text-text-main hover:opacity-70 transition-all flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low relative">
                         <span class="material-symbols-outlined">shopping_bag</span>
@@ -179,14 +173,12 @@
         </div>
     </nav>
 
-    <!-- Main Container - Stitch UI Sign In / Register Form -->
     <main
         class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16 flex items-center justify-center">
 
         <div
             class="w-full max-w-md bg-surface-white border border-surface-container-high rounded-xl p-8 md:p-10 shadow-sm transition-all duration-300 hover:shadow-md">
 
-            <!-- Auth Toggle Tabs -->
             <div class="flex border-b border-surface-container mb-8">
                 <button id="tab-login" onclick="switchTab('login')"
                     class="flex-1 pb-3 text-center font-headline-md text-base font-semibold text-text-main border-b-2 border-lavender-deep transition-all">
@@ -198,7 +190,6 @@
                 </button>
             </div>
 
-            <!-- Login Form Section -->
             <div id="form-login" class="space-y-6">
                 <div class="space-y-1 text-center sm:text-left">
                     <h1 class="font-headline-lg text-2xl text-text-main">Welcome Back</h1>
@@ -248,7 +239,6 @@
                 </form>
             </div>
 
-            <!-- Register Form Section (Initially Hidden) -->
             <div id="form-register" class="space-y-6 hidden">
                 <div class="space-y-1 text-center sm:text-left">
                     <h1 class="font-headline-lg text-2xl text-text-main">Join Aethel</h1>
@@ -307,14 +297,12 @@
                 </form>
             </div>
 
-            <!-- Social Divider -->
             <div class="relative flex items-center justify-center my-6">
                 <div class="border-t border-surface-container w-full"></div>
                 <span
                     class="bg-surface-white px-3 font-label-sm text-[11px] text-text-muted uppercase tracking-widest absolute">Or</span>
             </div>
 
-            <!-- Social Sign-in Buttons -->
             <div class="space-y-3">
                 <a href="./06-shop-modern-fashion/index.html"
                     class="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg border border-surface-container-high bg-surface-container-low text-text-main font-label-sm text-xs uppercase tracking-wider hover:border-lavender-deep transition-all">
@@ -332,7 +320,6 @@
                 </a>
             </div>
 
-            <!-- Direct Navigation Link -->
             <div class="mt-8 text-center border-t border-surface-container pt-4">
                 <a href="./06-shop-modern-fashion/index.html"
                     class="font-label-sm text-xs text-lavender-deep hover:underline uppercase tracking-wider flex items-center justify-center gap-1">
@@ -343,14 +330,12 @@
         </div>
     </main>
 
-    <!-- Footer (Google Stitch UI) -->
     <footer class="bg-surface-white border-t border-surface-container py-6 text-center">
         <p class="font-body-md text-xs text-text-muted">
             © 2026 AETHEL Online Fashion Store. All Rights Reserved. Built by Nigesh & Abdul Kalam Asath
         </p>
     </footer>
 
-    <!-- Interactive JS to switch tabs & navigate to homepage on submit -->
     <script>
         function switchTab(tab) {
             const loginTab = document.getElementById('tab-login');
@@ -373,7 +358,7 @@
 
         function handleAuthSubmit(event) {
             event.preventDefault();
-            // Redirect to Aethel Modern Fashion Homepage
+
             window.location.href = './06-shop-modern-fashion/index.html';
         }
     </script>

@@ -166,8 +166,7 @@
         .icon-fill {
             font-variation-settings: 'FILL' 1;
         }
-        
-        /* Custom Table Scrollbar */
+
         .table-scroll::-webkit-scrollbar {
             height: 6px;
             width: 6px;
@@ -176,15 +175,15 @@
             background: transparent;
         }
         .table-scroll::-webkit-scrollbar-thumb {
-            background-color: #e2dfde; /* secondary-container */
+            background-color: #e2dfde; 
             border-radius: 4px;
         }
     </style>
 </head>
 <body class="bg-surface-white text-text-main font-body-md min-h-screen flex">
-<!-- SideNavBar (JSON Style Driven) -->
+
 <nav class="hidden md:flex bg-surface-container-low flex-col h-screen w-64 py-8 px-4 border-r border-surface-container sticky top-0 shrink-0 z-50">
-<!-- Header / Brand -->
+
 <div class="mb-10 px-2 flex items-center gap-3">
 <div class="w-10 h-10 rounded-full bg-lavender-deep text-surface-white flex items-center justify-center font-bold shrink-0">
 <span class="material-symbols-outlined text-xl">checkroom</span>
@@ -194,7 +193,7 @@
 <p class="font-label-sm text-label-sm text-text-muted">Store Management</p>
 </div>
 </div>
-<!-- Navigation Links -->
+
 <div class="flex flex-col gap-2 flex-grow">
 <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:bg-surface-container transition-colors group" href="#">
 <span class="material-symbols-outlined text-text-muted group-hover:text-text-main transition-colors">dashboard</span>
@@ -208,12 +207,12 @@
 <span class="material-symbols-outlined text-text-muted group-hover:text-text-main transition-colors">shopping_cart</span>
 <span class="font-label-sm text-label-sm text-text-muted group-hover:text-text-main transition-colors">Orders</span>
 </a>
-<!-- Active State: Customers -->
+
 <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-lavender-mist text-lavender-deep font-bold translate-x-1 duration-200" href="#">
 <span class="material-symbols-outlined icon-fill text-lavender-deep">group</span>
 <span class="font-label-sm text-label-sm text-lavender-deep">Customers</span>
 </a>
-<!-- Fixed Bottom Section (Store Settings & Sign Out) -->
+
 <div class="mt-auto pt-4 border-t border-surface-container flex flex-col gap-1.5 shrink-0">
 <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:bg-surface-container transition-colors group" href="../03-admin-overview/index.html#settings">
 <span class="material-symbols-outlined text-text-muted group-hover:text-text-main transition-colors">settings</span>
@@ -225,9 +224,9 @@
 </a>
 </div>
 </nav>
-<!-- Main Content Canvas -->
+
 <main class="flex-1 min-w-0 bg-surface-white">
-<!-- Top Utility Bar (Mobile Nav Toggle + Breadcrumbs/Actions) -->
+
 <header class="h-20 border-b border-surface-container flex items-center justify-between px-6 lg:px-12 bg-surface-white sticky top-0 z-40">
 <div class="flex items-center gap-4">
 <button class="md:hidden text-text-main hover:opacity-70 transition-opacity">
@@ -249,21 +248,21 @@
                 </button>
 </div>
 </header>
-<!-- Page Content -->
+
 <div class="p-6 lg:p-12 max-w-[1600px] mx-auto">
-<!-- Page Header & Filters -->
+
 <div class="mb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
 <div>
 <h1 class="font-display-lg text-display-lg text-text-main mb-2">Customer Directory</h1>
 <p class="font-body-md text-body-md text-text-muted max-w-2xl">Manage customer profiles, track order history, and monitor fulfillment status across all channels.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-<!-- Search -->
+
 <div class="relative w-full sm:w-64 lg:w-80">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">search</span>
 <input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-surface-container rounded-none font-body-md text-body-md text-text-main focus:outline-none focus:border-lavender-deep transition-colors placeholder:text-text-muted" placeholder="Search customers, orders..." type="text">
 </div>
-<!-- Filter Select -->
+
 <div class="relative w-full sm:w-48">
 <select class="w-full appearance-none pl-4 pr-10 py-3 bg-surface-container-low border border-surface-container rounded-none font-body-md text-body-md text-text-main focus:outline-none focus:border-lavender-deep transition-colors cursor-pointer">
 <option value="all">All Statuses</option>
@@ -275,7 +274,7 @@
 </div>
 </div>
 </div>
-<!-- Bento Layout for Stats (Optional visual enhancement) -->
+
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
 <div class="bg-surface-container-low p-6 border border-surface-container rounded-sm">
 <p class="font-label-sm text-label-sm text-text-muted mb-2">Total Customers</p>
@@ -301,7 +300,7 @@
                     </div>
 </div>
 </div>
-<!-- Data Table Container -->
+
 <div class="border border-surface-container bg-surface-white rounded-sm overflow-hidden">
 <div class="overflow-x-auto table-scroll">
 <table class="w-full text-left border-collapse min-w-[900px]">
@@ -323,7 +322,7 @@
 </tr>
 </thead>
 <tbody class="divide-y divide-surface-container font-body-md text-body-md">
-<!-- Row 1 -->
+
 <tr class="hover:bg-surface-container-low transition-colors group">
 <td class="py-4 px-6">
 <input class="w-4 h-4 border-surface-container text-lavender-deep rounded-sm focus:ring-lavender-deep accent-lavender-deep cursor-pointer" type="checkbox">
@@ -350,7 +349,7 @@
 </button>
 </td>
 </tr>
-<!-- Row 2 -->
+
 <tr class="hover:bg-surface-container-low transition-colors group">
 <td class="py-4 px-6">
 <input class="w-4 h-4 border-surface-container text-lavender-deep rounded-sm focus:ring-lavender-deep accent-lavender-deep cursor-pointer" type="checkbox">
@@ -377,7 +376,7 @@
 </button>
 </td>
 </tr>
-<!-- Row 3 -->
+
 <tr class="hover:bg-surface-container-low transition-colors group">
 <td class="py-4 px-6">
 <input class="w-4 h-4 border-surface-container text-lavender-deep rounded-sm focus:ring-lavender-deep accent-lavender-deep cursor-pointer" type="checkbox">
@@ -404,7 +403,7 @@
 </button>
 </td>
 </tr>
-<!-- Row 4 -->
+
 <tr class="hover:bg-surface-container-low transition-colors group">
 <td class="py-4 px-6">
 <input class="w-4 h-4 border-surface-container text-lavender-deep rounded-sm focus:ring-lavender-deep accent-lavender-deep cursor-pointer" type="checkbox">
@@ -434,7 +433,7 @@
 </tbody>
 </table>
 </div>
-<!-- Pagination -->
+
 <div class="flex items-center justify-between px-6 py-4 border-t border-surface-container bg-surface-white">
 <p class="font-label-sm text-label-sm text-text-muted">Showing 1 to 4 of 12,450 entries</p>
 <div class="flex items-center gap-2">
@@ -453,6 +452,5 @@
 </div>
 </div>
 </main>
-
 
 </body></html>

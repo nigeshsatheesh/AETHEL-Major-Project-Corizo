@@ -123,13 +123,11 @@
 
 <body class="bg-background text-text-main font-body-md antialiased flex h-screen overflow-hidden relative">
 
-    <!-- Toast Notification -->
     <div id="admin-toast" class="fixed bottom-6 right-6 bg-inverse-surface text-surface-white px-5 py-3 rounded-lg shadow-xl text-sm flex items-center gap-3 z-[100] transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
         <span class="material-symbols-outlined text-lavender-deep">check_circle</span>
         <span id="admin-toast-msg">Settings saved successfully</span>
     </div>
 
-    <!-- SideNavBar (Always Present) -->
     <aside class="fixed md:static flex flex-col h-full py-8 px-4 border-r border-surface-container bg-surface-container-low w-64 z-20 shrink-0 hidden md:flex">
         <div class="mb-8 px-2 flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-lavender-deep text-surface-white flex items-center justify-center font-bold shrink-0 shadow-sm">
@@ -141,7 +139,6 @@
             </div>
         </div>
 
-        <!-- Navigation Tabs -->
         <nav class="flex flex-col gap-1.5 flex-grow">
             <button onclick="switchAdminTab('overview')" id="tab-btn-overview" class="flex items-center gap-3 px-4 py-3 nav-item-active w-full text-left transition-all">
                 <span class="material-symbols-outlined">dashboard</span>
@@ -165,7 +162,6 @@
                 <span class="font-label-sm text-sm">Live Storefront</span>
             </a>
 
-            <!-- Fixed Bottom Section (Store Settings & Sign Out) -->
             <div class="mt-auto border-t border-surface-container pt-4 flex flex-col gap-1.5 shrink-0">
                 <button onclick="switchAdminTab('settings')" id="tab-btn-settings" class="flex items-center gap-3 px-4 py-3 nav-item-inactive rounded-lg w-full text-left transition-all">
                     <span class="material-symbols-outlined">settings</span>
@@ -180,9 +176,8 @@
         </nav>
     </aside>
 
-    <!-- Main Content Area -->
     <main class="flex-grow flex flex-col h-full overflow-y-auto w-full">
-        <!-- Top App Bar Mobile Header -->
+        
         <header class="md:hidden flex items-center justify-between p-4 border-b border-surface-container bg-surface-white">
             <h1 class="font-headline-md text-base text-lavender-deep flex items-center gap-2 font-bold">
                 <span class="material-symbols-outlined text-xl">checkroom</span> AETHEL Admin
@@ -191,8 +186,7 @@
         </header>
 
         <div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex-grow space-y-8">
-            
-            <!-- TAB 1: OVERVIEW -->
+
             <div id="view-overview" class="space-y-8">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
@@ -209,9 +203,8 @@
                     </div>
                 </div>
 
-                <!-- Stats Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Stat Card 1 -->
+                    
                     <div class="bg-surface-white p-6 rounded-xl border border-surface-container flex flex-col gap-4 relative overflow-hidden group shadow-xs">
                         <div class="flex items-center gap-3 relative z-10">
                             <div class="w-10 h-10 rounded-full bg-lavender-mist flex items-center justify-center">
@@ -227,7 +220,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Stat Card 2 -->
+                    
                     <div class="bg-surface-white p-6 rounded-xl border border-surface-container flex flex-col gap-4 relative overflow-hidden group shadow-xs">
                         <div class="flex items-center gap-3 relative z-10">
                             <div class="w-10 h-10 rounded-full bg-lavender-mist flex items-center justify-center">
@@ -243,7 +236,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Stat Card 3 -->
+                    
                     <div class="bg-surface-white p-6 rounded-xl border border-surface-container flex flex-col gap-4 relative overflow-hidden group shadow-xs">
                         <div class="flex items-center gap-3 relative z-10">
                             <div class="w-10 h-10 rounded-full bg-lavender-mist flex items-center justify-center">
@@ -261,7 +254,6 @@
                     </div>
                 </div>
 
-                <!-- Recent Activity Table -->
                 <div class="bg-surface-white rounded-xl border border-surface-container p-6 shadow-xs space-y-4">
                     <h3 class="font-headline-md text-lg font-semibold text-text-main">Recent Store Orders</h3>
                     <div class="overflow-x-auto">
@@ -286,7 +278,7 @@
                                 <tr>
                                     <td class="py-3 font-mono text-xs font-semibold">#100455</td>
                                     <td class="py-3">Ananya Sharma</td>
-                                    <td class="py-3 text-text-muted">Rib-knit Midi Dress</td>
+                                    <td class="py-3 text-text-muted">Yellow Hoodie full set</td>
                                     <td class="py-3 font-semibold">₹3,999</td>
                                     <td class="py-3"><span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">Shipped</span></td>
                                 </tr>
@@ -303,7 +295,6 @@
                 </div>
             </div>
 
-            <!-- TAB 2: PRODUCTS -->
             <div id="view-products" class="space-y-8 hidden">
                 <div class="flex justify-between items-center">
                     <div>
@@ -318,32 +309,31 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     <div class="bg-surface-white p-4 rounded-xl border border-surface-container flex flex-col space-y-3">
                         <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1200&q=95" class="w-full aspect-[3/4] object-cover rounded-lg">
-                        <h4 class="font-semibold text-sm">Oversized Linen Blend Blazer</h4>
+                        <h4 class="font-semibold text-sm">Polyester Brown Coat</h4>
                         <p class="text-xs text-text-muted">Stock: 42 units • ₹6,999</p>
                         <button onclick="showAdminToast('Product updated')" class="text-xs text-lavender-deep font-semibold underline text-left">Edit Details</button>
                     </div>
                     <div class="bg-surface-white p-4 rounded-xl border border-surface-container flex flex-col space-y-3">
                         <img src="../assets/images/mens_minimalist_lavender_hoodie.png" class="w-full aspect-[3/4] object-cover rounded-lg">
-                        <h4 class="font-semibold text-sm">Minimalist Heavyweight Hoodie</h4>
+                        <h4 class="font-semibold text-sm">Oversized Lavendar Hoodie</h4>
                         <p class="text-xs text-text-muted">Stock: 28 units • ₹4,199</p>
                         <button onclick="showAdminToast('Product updated')" class="text-xs text-lavender-deep font-semibold underline text-left">Edit Details</button>
                     </div>
                     <div class="bg-surface-white p-4 rounded-xl border border-surface-container flex flex-col space-y-3">
                         <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=1200&q=95" class="w-full aspect-[3/4] object-cover rounded-lg">
-                        <h4 class="font-semibold text-sm">Structured Cotton Trench Coat</h4>
+                        <h4 class="font-semibold text-sm">Pink Casual T-Shirt</h4>
                         <p class="text-xs text-text-muted">Stock: 15 units • ₹9,999</p>
                         <button onclick="showAdminToast('Product updated')" class="text-xs text-lavender-deep font-semibold underline text-left">Edit Details</button>
                     </div>
                     <div class="bg-surface-white p-4 rounded-xl border border-surface-container flex flex-col space-y-3">
                         <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=95" class="w-full aspect-[3/4] object-cover rounded-lg">
-                        <h4 class="font-semibold text-sm">Tailored Wool-blend Trousers</h4>
+                        <h4 class="font-semibold text-sm">Tailored Minimalistic Coat</h4>
                         <p class="text-xs text-text-muted">Stock: 50 units • ₹5,299</p>
                         <button onclick="showAdminToast('Product updated')" class="text-xs text-lavender-deep font-semibold underline text-left">Edit Details</button>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB 3: ORDERS & CART -->
             <div id="view-orders" class="space-y-8 hidden">
                 <div class="flex justify-between items-center">
                     <div>
@@ -370,7 +360,6 @@
                 </div>
             </div>
 
-            <!-- TAB 4: CUSTOMERS -->
             <div id="view-customers" class="space-y-8 hidden">
                 <div>
                     <h1 class="font-headline-lg text-headline-lg text-text-main">Customer Directory</h1>
@@ -392,7 +381,6 @@
                 </div>
             </div>
 
-            <!-- TAB 5: PERSISTENT STORE SETTINGS (Always available) -->
             <div id="view-settings" class="space-y-8 hidden">
                 <div>
                     <h1 class="font-headline-lg text-headline-lg text-text-main">AETHEL Store Settings</h1>
@@ -400,7 +388,7 @@
                 </div>
 
                 <form onsubmit="saveSettings(event)" class="space-y-8 max-w-3xl">
-                    <!-- General Settings -->
+                    
                     <div class="bg-surface-white p-6 rounded-xl border border-surface-container space-y-4 shadow-xs">
                         <h3 class="font-headline-md text-base font-semibold text-text-main border-b border-surface-container pb-2 flex items-center gap-2">
                             <span class="material-symbols-outlined text-lavender-deep">store</span> General Website Configuration
@@ -425,7 +413,6 @@
                         </div>
                     </div>
 
-                    <!-- Store Location & Address Settings -->
                     <div class="bg-surface-white p-6 rounded-xl border border-surface-container space-y-4 shadow-xs">
                         <h3 class="font-headline-md text-base font-semibold text-text-main border-b border-surface-container pb-2 flex items-center gap-2">
                             <span class="material-symbols-outlined text-lavender-deep">location_on</span> Store Location &amp; Regional
@@ -450,7 +437,6 @@
                         </div>
                     </div>
 
-                    <!-- Shipping Rules -->
                     <div class="bg-surface-white p-6 rounded-xl border border-surface-container space-y-4 shadow-xs">
                         <h3 class="font-headline-md text-base font-semibold text-text-main border-b border-surface-container pb-2 flex items-center gap-2">
                             <span class="material-symbols-outlined text-lavender-deep">local_shipping</span> Shipping &amp; Policy Settings
@@ -476,7 +462,6 @@
         </div>
     </main>
 
-    <!-- JavaScript Navigation Engine -->
     <script>
         function switchAdminTab(tabName) {
             const tabs = ['overview', 'products', 'orders', 'customers', 'settings'];
@@ -581,7 +566,7 @@
                         <tr>
                             <td style="padding: 8px; border-bottom: 1px solid #eee; font-family: monospace; font-weight: bold;">#100455</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">Ananya Sharma</td>
-                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Rib-knit Midi Dress</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Yellow Hoodie full set</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">₹3,999</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee; color: #1d4ed8; font-weight: bold;">Shipped</td>
                         </tr>
@@ -607,25 +592,25 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Oversized Linen Blend Blazer</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Polyester Brown Coat</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">Ladies</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">₹6,999</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">42 units</td>
                         </tr>
                         <tr>
-                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Minimalist Heavyweight Hoodie</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Oversized Lavendar Hoodie</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">Men</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">₹4,199</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">28 units</td>
                         </tr>
                         <tr>
-                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Structured Cotton Trench Coat</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Pink Casual T-Shirt</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">Men</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">₹9,999</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">15 units</td>
                         </tr>
                         <tr>
-                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Tailored Wool-blend Trousers</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #eee;">Tailored Minimalistic Coat</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">Men</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">₹5,299</td>
                             <td style="padding: 8px; border-bottom: 1px solid #eee;">50 units</td>

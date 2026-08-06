@@ -170,7 +170,7 @@
     </style>
 </head>
 <body class="bg-surface-white text-text-main font-body-md antialiased flex flex-col min-h-screen">
-<!-- TopNavBar: Suppressed because this is a transactional checkout flow -->
+
 <header class="w-full flex justify-center py-8 border-b border-surface-container">
 <a class="font-headline-lg text-headline-lg tracking-tighter text-text-main flex items-center gap-2" href="../06-shop-modern-fashion/index.html">
     <span class="w-9 h-9 rounded-full bg-lavender-deep text-surface-white flex items-center justify-center font-bold">
@@ -180,7 +180,7 @@
 </a>
 </header>
 <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
-<!-- Order Confirmation Notification (Hidden by default, shown on successful checkout) -->
+
 <div class="hidden mb-12 bg-lavender-mist border border-primary-container p-6 rounded text-center" id="order-success">
 <span class="material-symbols-outlined text-lavender-deep text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <h2 class="font-headline-md text-headline-md text-text-main mb-2">Your order has been placed!</h2>
@@ -188,9 +188,9 @@
 <a href="../06-shop-modern-fashion/index.html" class="inline-block mt-4 px-6 py-2.5 bg-lavender-deep text-surface-white font-label-sm text-xs uppercase tracking-wider rounded-lg">Return to Shop</a>
 </div>
 <div class="flex flex-col lg:flex-row gap-16" id="checkout-form">
-<!-- Left Column: Checkout Details -->
+
 <div class="w-full lg:w-7/12 flex flex-col gap-12">
-<!-- Contact Information -->
+
 <section>
 <h2 class="font-headline-md text-headline-md mb-6 border-b border-surface-container pb-2">Contact Information</h2>
 <div class="space-y-4">
@@ -200,7 +200,7 @@
 </div>
 </div>
 </section>
-<!-- Delivery Address -->
+
 <section>
 <h2 class="font-headline-md text-headline-md mb-6 border-b border-surface-container pb-2">Delivery Address</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
@@ -235,7 +235,7 @@
 </div>
 </div>
 </section>
-<!-- Payment Method -->
+
 <section>
 <h2 class="font-headline-md text-headline-md mb-6 border-b border-surface-container pb-2">Payment</h2>
 <div class="space-y-4">
@@ -258,15 +258,15 @@
 </div>
 </section>
 </div>
-<!-- Right Column: Order Summary -->
+
 <div class="w-full lg:w-5/12">
 <div class="bg-surface p-8 sticky top-8 rounded-xl border border-surface-container">
 <h2 class="font-headline-md text-headline-md mb-8">Shopping Bag Summary</h2>
-<!-- Items Container -->
+
 <div class="flex flex-col gap-6 mb-8 border-b border-surface-container pb-8" id="checkout-items-container">
-    <!-- Populated dynamically via JS -->
+    
 </div>
-<!-- Totals -->
+
 <div class="flex flex-col gap-4 mb-8">
 <div class="flex justify-between font-body-md text-body-md text-text-muted">
 <span>Subtotal</span>
@@ -290,7 +290,6 @@
 </div>
 </main>
 
-<!-- Footer -->
 <footer class="w-full border-t border-surface-container mt-20 py-10 flex flex-col items-center">
 <p class="font-label-sm text-label-sm text-text-muted">© 2026 AETHEL Online Fashion Store. All Rights Reserved. Built by Nigesh & Abdul Kalam Asath</p>
 </footer>
@@ -309,8 +308,8 @@
 
         if (!cart || cart.length === 0) {
             cart = [
-                { title: 'Oversized Linen Blend Blazer', price: 6999, qty: 1, image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1200&q=95' },
-                { title: 'Minimalist Heavyweight Hoodie', price: 4199, qty: 1, image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=95' }
+                { title: 'Polyester Brown Coat', price: 6999, qty: 1, image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1200&q=95' },
+                { title: 'Oversized Lavendar Hoodie', price: 4199, qty: 1, image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=95' }
             ];
         }
 
@@ -343,6 +342,5 @@
         document.getElementById('order-success').classList.remove('hidden');
         localStorage.removeItem('aethel_cart');
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-</script>
+    });</script>
 </body></html>
