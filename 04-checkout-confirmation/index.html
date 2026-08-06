@@ -172,14 +172,20 @@
 <body class="bg-surface-white text-text-main font-body-md antialiased flex flex-col min-h-screen">
 <!-- TopNavBar: Suppressed because this is a transactional checkout flow -->
 <header class="w-full flex justify-center py-8 border-b border-surface-container">
-<a class="font-headline-lg text-headline-lg tracking-tighter text-text-main" href="#">AETHEL</a>
+<a class="font-headline-lg text-headline-lg tracking-tighter text-text-main flex items-center gap-2" href="../06-shop-modern-fashion/index.html">
+    <span class="w-9 h-9 rounded-full bg-lavender-deep text-surface-white flex items-center justify-center font-bold">
+        <span class="material-symbols-outlined text-xl">checkroom</span>
+    </span>
+    AETHEL
+</a>
 </header>
 <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
 <!-- Order Confirmation Notification (Hidden by default, shown on successful checkout) -->
 <div class="hidden mb-12 bg-lavender-mist border border-primary-container p-6 rounded text-center" id="order-success">
 <span class="material-symbols-outlined text-lavender-deep text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <h2 class="font-headline-md text-headline-md text-text-main mb-2">Your order has been placed!</h2>
-<p class="font-body-md text-body-md text-text-muted">Thank you for shopping with AETHEL. Your order #100456 is being processed.</p>
+<p class="font-body-md text-body-md text-text-muted">Thank you for shopping with AETHEL, Nigesh! Your order #100456 is being processed.</p>
+<a href="../06-shop-modern-fashion/index.html" class="inline-block mt-4 px-6 py-2.5 bg-lavender-deep text-surface-white font-label-sm text-xs uppercase tracking-wider rounded-lg">Return to Shop</a>
 </div>
 <div class="flex flex-col lg:flex-row gap-16" id="checkout-form">
 <!-- Left Column: Checkout Details -->
@@ -190,7 +196,7 @@
 <div class="space-y-4">
 <div>
 <label class="block font-label-sm text-label-sm text-text-muted mb-1 uppercase tracking-widest" for="email">Email Address</label>
-<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="email" placeholder="your@email.com" type="email" value="jane.doe@example.com">
+<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="email" placeholder="nigeshsatheesh@gmail.com" type="email" value="nigeshsatheesh@gmail.com">
 </div>
 </div>
 </section>
@@ -200,27 +206,28 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
 <div>
 <label class="block font-label-sm text-label-sm text-text-muted mb-1 uppercase tracking-widest" for="fname">First Name</label>
-<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="fname" placeholder="First Name" type="text" value="Jane">
+<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="fname" placeholder="First Name" type="text" value="Nigesh">
 </div>
 <div>
 <label class="block font-label-sm text-label-sm text-text-muted mb-1 uppercase tracking-widest" for="lname">Last Name</label>
-<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="lname" placeholder="Last Name" type="text" value="Doe">
+<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="lname" placeholder="Last Name" type="text" value="Satheesh">
 </div>
 <div class="md:col-span-2">
 <label class="block font-label-sm text-label-sm text-text-muted mb-1 uppercase tracking-widest" for="address">Address</label>
-<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="address" placeholder="Street Address" type="text" value="123 Fashion Ave, Apt 4B">
+<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="address" placeholder="Street Address" type="text" value="Kuniyamuthur, Coimbatore, Tamil Nadu">
 </div>
 <div>
 <label class="block font-label-sm text-label-sm text-text-muted mb-1 uppercase tracking-widest" for="city">City</label>
-<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="city" placeholder="City" type="text" value="New York">
+<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="city" placeholder="City" type="text" value="Coimbatore">
 </div>
 <div>
 <label class="block font-label-sm text-label-sm text-text-muted mb-1 uppercase tracking-widest" for="zip">Postal Code</label>
-<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="zip" placeholder="Postal Code" type="text" value="10001">
+<input class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="zip" placeholder="Postal Code" type="text" value="641 008">
 </div>
 <div class="md:col-span-2">
 <label class="block font-label-sm text-label-sm text-text-muted mb-1 uppercase tracking-widest" for="country">Country/Region</label>
 <select class="w-full border-0 border-b border-surface-container-high bg-transparent py-2 focus:ring-0 px-0 transition-colors" id="country">
+<option value="IN" selected>India</option>
 <option value="US">United States</option>
 <option value="UK">United Kingdom</option>
 <option value="FR">France</option>
@@ -232,16 +239,16 @@
 <section>
 <h2 class="font-headline-md text-headline-md mb-6 border-b border-surface-container pb-2">Payment</h2>
 <div class="space-y-4">
-<label class="flex items-center justify-between p-4 border border-surface-container cursor-pointer hover:bg-surface-container-low transition-colors group">
+<label class="flex items-center justify-between p-4 border border-surface-container cursor-pointer hover:bg-surface-container-low transition-colors group rounded-lg">
 <div class="flex items-center gap-4">
 <input class="text-lavender-deep focus:ring-lavender-deep border-outline-variant h-4 w-4" name="payment" type="radio">
-<span class="font-body-md text-body-md">Credit Card</span>
+<span class="font-body-md text-body-md">Credit / Debit Card</span>
 </div>
 <div class="flex gap-2 text-text-muted">
 <span class="material-symbols-outlined">credit_card</span>
 </div>
 </label>
-<label class="flex items-center justify-between p-4 border border-lavender-deep bg-lavender-mist cursor-pointer transition-colors group">
+<label class="flex items-center justify-between p-4 border border-lavender-deep bg-lavender-mist cursor-pointer transition-colors group rounded-lg">
 <div class="flex items-center gap-4">
 <input checked="" class="text-lavender-deep focus:ring-lavender-deep border-lavender-deep h-4 w-4" name="payment" type="radio">
 <span class="font-body-md text-body-md">Cash on Delivery</span>
@@ -253,79 +260,89 @@
 </div>
 <!-- Right Column: Order Summary -->
 <div class="w-full lg:w-5/12">
-<div class="bg-surface p-8 sticky top-8">
-<h2 class="font-headline-md text-headline-md mb-8">Shopping Bag</h2>
-<!-- Items -->
-<div class="flex flex-col gap-6 mb-8 border-b border-surface-container pb-8">
-<!-- Item 1 -->
-<div class="flex gap-4">
-<div class="w-24 h-32 flex-shrink-0 bg-surface-container-low">
-<img class="w-full h-full object-cover" data-alt="A high-fashion editorial product shot of a minimalist, structured wool blend tailored coat in soft cream, displayed on a hanger against a neutral light grey background. Soft, diffused studio lighting highlighting the texture of the fabric. The aesthetic is clean, modern, and luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzDQxVeXsjlSVhNCiW-apU0l3jWjsrEw3Y78SrzKplvcv_W6AY22t_mwlcd_hqzudpV94XIqq86ibgkjB1VhObM4igNY_GVFRQ1kHo-hTpUJ4s5P2hSi5ai71_pu-MdfIeCNDbl8_j6DQPoVAgA5klG3E3d7o6bztFmxlo1Cbr1Os4GN0ApC8xF8Z7cNLAeO785dCEszDSFk4B-TWhJbOntTqq01KilbgD5uGUZq-l4VweHtbSZsq8UQ">
-</div>
-<div class="flex flex-col justify-between flex-grow">
-<div>
-<h3 class="font-body-md text-body-md text-text-main">Structured Wool Blend Coat</h3>
-<p class="font-label-sm text-label-sm text-text-muted mt-1">Color: Cream</p>
-<p class="font-label-sm text-label-sm text-text-muted">Size: M</p>
-</div>
-<div class="flex justify-between items-center">
-<p class="font-label-sm text-label-sm text-text-muted">Qty 1</p>
-<p class="font-body-md text-body-md">₹18,999</p>
-</div>
-</div>
-</div>
-<!-- Item 2 -->
-<div class="flex gap-4">
-<div class="w-24 h-32 flex-shrink-0 bg-surface-container-low">
-<img class="w-full h-full object-cover" data-alt="A detailed flat lay shot of a pair of high-waisted wide-leg tailored trousers in charcoal grey. The fabric has a subtle drape, shot from directly above on a pristine white surface. Minimalist high-end fashion e-commerce photography style with even, bright lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbUUYEvCUYaynEeycKAr3cNJia9XsqaBvNHSiOIsWepa_m6lulFhVr9VZgkp2r-Jbw9h2vh_gROu5PKZGCoQ4NjreyW9wIQrpZc34DLRcTtoPRJ6qQN8ObGAWqSs5hteMwNnyCA8YM35oZc6pMbfY7Sl6uRSjSlh9SJnKFEQjQcZW8Mre3BKIgOpCnGaI2trsgqgGUCSP1a0iYOKj3WTwYR23RhLp6rN7AGJ3jrKD5_d1aggILhtg1_A">
-</div>
-<div class="flex flex-col justify-between flex-grow">
-<div>
-<h3 class="font-body-md text-body-md text-text-main">Wide-leg Tailored Trousers</h3>
-<p class="font-label-sm text-label-sm text-text-muted mt-1">Color: Charcoal</p>
-<p class="font-label-sm text-label-sm text-text-muted">Size: 38</p>
-</div>
-<div class="flex justify-between items-center">
-<p class="font-label-sm text-label-sm text-text-muted">Qty 1</p>
-<p class="font-body-md text-body-md">₹6,799</p>
-</div>
-</div>
-</div>
+<div class="bg-surface p-8 sticky top-8 rounded-xl border border-surface-container">
+<h2 class="font-headline-md text-headline-md mb-8">Shopping Bag Summary</h2>
+<!-- Items Container -->
+<div class="flex flex-col gap-6 mb-8 border-b border-surface-container pb-8" id="checkout-items-container">
+    <!-- Populated dynamically via JS -->
 </div>
 <!-- Totals -->
 <div class="flex flex-col gap-4 mb-8">
 <div class="flex justify-between font-body-md text-body-md text-text-muted">
-<span class="">Subtotal</span>
-<span class="">₹25,798</span>
+<span>Subtotal</span>
+<span id="checkout-subtotal">₹11,198</span>
 </div>
 <div class="flex justify-between font-body-md text-body-md text-text-muted">
-<span class="">Shipping</span>
-<span class="">₹1,150</span>
+<span>Shipping</span>
+<span class="text-emerald-600 font-semibold">FREE</span>
 </div>
 <div class="flex justify-between font-headline-md text-headline-md text-text-main mt-4 pt-4 border-t border-surface-container">
-<span class="">Total</span>
-<span class="">₹26,948</span>
+<span>Total</span>
+<span id="checkout-total" class="text-xl font-bold">₹11,198</span>
 </div>
 </div>
-<button class="w-full bg-lavender-deep text-surface-white font-label-sm text-label-sm uppercase tracking-widest py-4 hover:bg-opacity-90 transition-opacity" id="place-order-btn">
-                        Place Order
-                    </button>
-<p class="font-label-sm text-label-sm text-text-muted text-center mt-4">By placing your order, you agree to our Terms and Conditions.</p>
+<button class="w-full bg-lavender-deep text-surface-white font-label-sm text-label-sm uppercase tracking-widest py-4 hover:bg-opacity-90 transition-opacity rounded-lg shadow-sm" id="place-order-btn">
+    Place Order
+</button>
+<p class="font-label-sm text-label-sm text-text-muted text-center mt-4">By placing your order, you agree to AETHEL's Terms and Conditions.</p>
 </div>
 </div>
 </div>
 </main>
-<!-- Footer: Simple minimal footer for transactional page -->
+
+<!-- Footer -->
 <footer class="w-full border-t border-surface-container mt-20 py-10 flex flex-col items-center">
-<p class="font-label-sm text-label-sm text-text-muted">© 2024 AETHEL Online Store. All Rights Reserved.</p>
+<p class="font-label-sm text-label-sm text-text-muted">© 2026 AETHEL Online Store. All Rights Reserved.</p>
 </footer>
+
 <script>
-        document.getElementById('place-order-btn').addEventListener('click', function() {
-            document.getElementById('checkout-form').classList.add('hidden');
-            document.getElementById('order-success').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    function renderCheckoutCart() {
+        const container = document.getElementById('checkout-items-container');
+        const subtotalEl = document.getElementById('checkout-subtotal');
+        const totalEl = document.getElementById('checkout-total');
 
+        let cart = [];
+        try {
+            const stored = localStorage.getItem('aethel_cart');
+            if (stored) cart = JSON.parse(stored);
+        } catch (e) {}
 
+        if (!cart || cart.length === 0) {
+            cart = [
+                { title: 'Oversized Linen Blend Blazer', price: 6999, qty: 1, image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1200&q=95' },
+                { title: 'Minimalist Heavyweight Hoodie', price: 4199, qty: 1, image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=95' }
+            ];
+        }
+
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+        subtotalEl.innerText = `₹${subtotal.toLocaleString('en-IN')}`;
+        totalEl.innerText = `₹${subtotal.toLocaleString('en-IN')}`;
+
+        container.innerHTML = cart.map(item => `
+            <div class="flex gap-4">
+                <div class="w-20 h-24 flex-shrink-0 bg-surface-container-low rounded-lg overflow-hidden">
+                    <img class="w-full h-full object-cover" alt="${item.title}" src="${item.image}">
+                </div>
+                <div class="flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="font-body-md text-sm font-semibold text-text-main line-clamp-1">${item.title}</h3>
+                        <p class="font-label-sm text-xs text-text-muted mt-1">Qty: ${item.qty}</p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <p class="font-body-md text-sm font-bold text-text-main">₹${(item.price * item.qty).toLocaleString('en-IN')}</p>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCheckoutCart);
+
+    document.getElementById('place-order-btn').addEventListener('click', function() {
+        document.getElementById('checkout-form').classList.add('hidden');
+        document.getElementById('order-success').classList.remove('hidden');
+        localStorage.removeItem('aethel_cart');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
 </body></html>
